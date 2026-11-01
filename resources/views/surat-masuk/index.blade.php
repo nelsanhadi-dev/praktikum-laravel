@@ -1,45 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Surat Masuk</title>
-</head>
-<body>
-
-    <h1>halaman ini menampilkan halaman surat masuk</h1>
-    <table border="1" cellpadding= "10">
-
-        <thead>
-
-            <th>No Urut</th>
-            <th>No surat</th>
-            <th>Tanggal</th>
-            <th>Pengirim</th>
-            <th>Perihal</th>
-            <th>aksi</th>
-            
-
-        </thead>
-
-        <tbody>
-
-            @foreach($suratMasuk as $i)
-          <tr>
-            <td>{{ $i['id'] }}</td>
-            <td>{{ $i['nomor_surat'] }}</td>
-            <td>{{ $i['tanggal'] }}</td>
-            <td>{{ $i['pengirim'] }}</td>
-            <td>{{ $i['perihal'] }}</td>
-            <td>
-               <a href="{{route('surat.show',$i['id'])}}">detail</a>
-            </td>
-          </tr>
-           @endforeach 
-
-        </tbody>
-
-    </table>
-    
-</body>
-</html>
+@extends('layouts.app')
+@section('title', 'Daftar Surat Masuk')
+@section('content')
+<h1>Daftar Surat Masuk</h1>
+<table border="1" cellpadding="8">
+    <thead>
+        <tr><th>No</th><th>Nomor Surat</th><th>Tanggal</th>
+            <th>Pengirim</th><th>Perihal</th><th>Aksi</th></tr>
+    </thead>
+    <tbody>
+        @forelse ($suratMasuk as $surat)
+        <tr>
+            <td>{{ $loop->iteration }}</td>
+            <td>{{ $surat->nomor_surat }}</td>
+            <td>{{ $surat->tanggal }}</td>
+            <td>{{ $surat->pengirim }}</td>
+            <td>{{ $surat->perihal }}</td>
+            <td><a href="{{ route('surat.show', $surat->id) }}">Detail</a></td>
+        </tr>
+        @empty
+        <tr><td colspan="6">Belum ada surat masuk.</td></tr>
+        @endforelse
+    </tbody>
+</table>
+@endsection

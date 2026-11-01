@@ -1,39 +1,11 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Surat Masuk</title>
-</head>
-<body>
-    <h1>Halaman Detail Surat Masuk</h1>
-
-    @if(isset($suratMasukShow))
-        <p>
-            <strong>Nomor Surat:</strong>
-            {{ $suratMasukShow['nomor_surat'] }}
-        </p>
-
-        <p>
-            <strong>Tanggal:</strong>
-            {{ $suratMasukShow['tanggal'] }}
-        </p>
-
-        <p>
-            <strong>Pengirim:</strong>
-            {{ $suratMasukShow['pengirim'] }}
-        </p>
-
-        <p>
-            <strong>Perihal:</strong>
-            {{ $suratMasukShow['perihal'] }}
-        </p>
-    @else
-        <p>Surat tidak ditemukan.</p>
-    @endif
-
-    <br>
-
-    <a href="{{ route('surat.index') }}">Kembali</a>
-</body>
-</html>
+@extends('layouts.app')
+@section('title', 'Detail Surat Masuk')
+@section('content')
+<h1>Detail Surat Masuk</h1>
+<p><strong>Nomor:</strong> {{ $surat->nomor_surat }}</p>
+<p><strong>Tanggal:</strong> {{ $surat->tanggal }}</p>
+<p><strong>Pengirim:</strong> {{ $surat->pengirim }}</p>
+<p><strong>Perihal:</strong> {{ $surat->perihal }}</p>
+<p><strong>Keterangan:</strong> {{ $surat->keterangan ?? '-' }}</p>
+<a href="{{ route('surat.index') }}">Kembali ke daftar</a>
+@endsection
