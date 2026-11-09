@@ -1,10 +1,12 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class OutgoingLetter extends Model
 {
-    // Belum memerlukan konfigurasi tambahan pada P3.
+    protected $fillable = [
+        'nomor_surat', 'tanggal', 'tujuan',
+        'perihal', 'keterangan',
+    ];
 }
