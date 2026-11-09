@@ -2,7 +2,9 @@
 @section('title', 'Daftar Surat Keluar')
 @section('content')
 <h1>Daftar Surat Keluar</h1>
+@can('manage-letters')
 <a href="{{ route('surat-keluar.create') }}">+ Tambah Surat</a>
+@endcan
 @if (session('success'))
     <p style="color:green">{{ session('success') }}</p>
 @endif
@@ -21,6 +23,7 @@
             <td>{{ $surat->perihal }}</td>
             <td>
                 <a href="{{ route('surat-keluar.show', $surat->id) }}">Detail</a>
+                @can('manage-letters')
                 <a href="{{ route('surat-keluar.edit', $surat->id) }}">Edit</a>
                 <form action="{{ route('surat-keluar.destroy', $surat->id) }}"
                       method="POST" style="display:inline">
@@ -29,6 +32,7 @@
                     <button type="submit"
                         onclick="return confirm('Hapus surat ini?')">Hapus</button>
                 </form>
+                @endcan
             </td>
         </tr>
     @empty
