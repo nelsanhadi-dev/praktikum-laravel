@@ -1,0 +1,14 @@
+ LAPORAN-P3.md                                 |  8 [31m---[m
+ resources/css/app.css                         | 12 [32m+[m[31m---[m
+ resources/views/auth/login.blade.php          | 77 [32m+++++++++++++++++[m[31m----[m
+ resources/views/dashboard.blade.php           | 40 [32m+++++++++[m[31m--[m
+ resources/views/layouts/app.blade.php         | 87 [32m+++++++++++++++[m[31m---------[m
+ resources/views/surat-keluar/create.blade.php | 72 [32m+++++++++++++[m[31m-------[m
+ resources/views/surat-keluar/edit.blade.php   | 74 [32m++++++++++++[m[31m--------[m
+ resources/views/surat-keluar/index.blade.php  | 98 [32m+++++++++++++++++[m[31m----------[m
+ resources/views/surat-keluar/show.blade.php   | 27 [32m++++++[m[31m--[m
+ resources/views/surat-masuk/create.blade.php  | 72 [32m+++++++++++++[m[31m-------[m
+ resources/views/surat-masuk/edit.blade.php    | 74 [32m++++++++++++[m[31m--------[m
+ resources/views/surat-masuk/index.blade.php   | 98 [32m+++++++++++++++++[m[31m----------[m
+ resources/views/surat-masuk/show.blade.php    | 27 [32m++++++[m[31m--[m
+ 13 files changed, 503 insertions(+), 263 deletions(-)
